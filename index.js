@@ -32,7 +32,7 @@ app.use(
 );
 
 //Connecting to yiur localhist/test db
-db.connectDB('mongodb+srv://10ish:ZGxmn4tpf2xIGe1K@cluster0.ohsizw7.mongodb.net/healthflix?retryWrites=true&w=majority');
+db.connectDB();
 //initializing database
 init();
 async function init() {
