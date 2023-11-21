@@ -1,6 +1,6 @@
 const db = require("../models/index");
 const User = db.User;
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const authConfig = require("../config/authConfig");
 exports.login = async (req, res) => {

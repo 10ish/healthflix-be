@@ -8,7 +8,7 @@ const sampleJob = require("./sampleJobData");
 const db = require("./models");
 const app = express();
 const cookieParser = require("cookie-parser");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const authConfig = require("./config/authConfig");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());

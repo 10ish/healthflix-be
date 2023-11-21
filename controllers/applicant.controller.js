@@ -2,7 +2,7 @@ const db = require("../models/index.js");
 const authConfig = require("../config/authConfig.js");
 const salt = authConfig.salt;
 const secret = authConfig.jwtSecretKey;
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { default: mongoose } = require("mongoose");
 
