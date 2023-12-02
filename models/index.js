@@ -8,10 +8,10 @@ const Application = require('./applications.model.js')
 const connectDB = async () => {
   console.log("running cdb");
   try {
-    await mongoose.connect("mongodb://0.0.0.0:27017", {
+    await mongoose.connect("mongodb+srv://10ish:1234@cluster0.2j34ccz.mongodb.net/helathflix?retryWrites=true&w=majority", {
       useNewUrlParser: true,
     });
-    console.log("Conection established to test database at localhost 27017");
+    console.log("Connection established to test database at localhost 27017");
   } catch (err) {
     console.log(` unable to connect to the database due to : ${err}`);
     process.exit(1);
