@@ -25,7 +25,7 @@ const Application = db.Application
 // });
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://healthflix-fe.vercel.app/"],
     methods: ["POST", "GET", "PATCH", "DELETE"],
     credentials: true,
   })
