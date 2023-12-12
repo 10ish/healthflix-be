@@ -90,7 +90,7 @@ exports.login = async (req, res) => {
             path: '/',
             sameSite:false,
             secure:true,
-            domain: process.env.NODE_ENV === 'development' ? '.localhost' : '.healthflix-fe.vercel.app',
+            domain: '.healthflix-fe.vercel.app',
             maxAge: 1 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
           });
 
