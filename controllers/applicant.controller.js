@@ -90,7 +90,7 @@ exports.login = async (req, res) => {
             path: '/',
             sameSite:'none',
             secure:true,
-            maxAge: 2 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
+            maxAge: 1 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
           });
 
           res.status(200).send({ message: "Logged in Successfully"});
