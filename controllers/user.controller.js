@@ -29,14 +29,14 @@ exports.login = async (req, res) => {
               expiresIn: "1d",
             }
           );
-      // res.cookie("adminToken", token, {
-      //       httpOnly: true,
-      //       path: '/',
-      //       sameSite:'none',
-      //    domain: '.vercel.app',
-      //       secure:true,
-      //       maxAge: 1 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
-      //     });
+      res.cookie("adminToken", token, {
+            httpOnly: true,
+            path: '/',
+            sameSite:'none',
+         domain: '.vercel.app',
+            secure:true,
+            maxAge: 1 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
+          });
 
           res.status(200).send({ message: "Logged in Successfully", token});
         }
