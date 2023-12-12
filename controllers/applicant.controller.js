@@ -85,14 +85,14 @@ exports.login = async (req, res) => {
               expiresIn: "1d",
             }
           );
-          res.cookie("token", token, {
-            httpOnly: true,
-            path: '/',
-            secure:true,
-            maxAge: 2 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
-          });
+          // res.cookie("token", token, {
+          //   httpOnly: true,
+          //   path: '/',
+          //   secure:true,
+          //   maxAge: 2 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
+          // });
 
-          res.status(200).send({ message: "Logged in Successfully" });
+          res.status(200).send({ message: "Logged in Successfully", token});
         }
       }
     );
