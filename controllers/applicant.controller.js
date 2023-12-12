@@ -142,9 +142,20 @@ exports.getOneApplicant = async (req, res) => {
 };
 
 exports.logout = async (req, res, next) => {
-  console.log("--------------------------");
   try {
-    await res.clearCookie("token");
+    const cookies = req.headers.cookie || '';
+    const parsedCookies = cookies.split(';').reduce((cookiesObj, cookie) => {
+      const [name, value] = cookie.trim().split('=');
+      cookiesObj[name] = value;
+      return cookiesObj;
+    }, {});
+
+    Object.keys(parsedCookies).forEach((cookieName) => {
+      if (cookieName.trim() === 'token') {
+        res.clearCookie(cookieName.trim());
+      }
+    });
+
     res.status(200).send({ message: "Logged Out Successfully" });
   } catch (err) {
     res.status(500).send({ message: "Unable to logout" });
