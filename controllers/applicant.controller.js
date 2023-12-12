@@ -87,7 +87,7 @@ exports.login = async (req, res) => {
           );
           res.cookie("token", token, {
             httpOnly: true,
-            path: '/applicants',
+            path: '/',
             secure:true,
             sameSite: 'none',
           domain: '.vercel.app',
