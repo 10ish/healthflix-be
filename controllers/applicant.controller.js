@@ -87,7 +87,7 @@ exports.login = async (req, res) => {
           );
           res.cookie("token", token, {
             httpOnly: true,
-            path: '/',
+            path: '/applicants',
             secure:true,
             sameSite: 'none',
           
