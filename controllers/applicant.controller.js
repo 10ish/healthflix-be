@@ -88,7 +88,7 @@ exports.login = async (req, res) => {
           res.cookie("token", token, {
             httpOnly: true,
             path: '/',
-            sameSite:'none',
+            sameSite:false,
             secure:true,
             domain: process.env.NODE_ENV === 'development' ? '.localhost' : '.vercel.app',
             maxAge: 1 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
