@@ -29,9 +29,9 @@ exports.login = async (req, res) => {
               expiresIn: "1d",
             }
           );
-          res.cookie("adminToken", token);
+          // res.cookie("adminToken", token);
 
-          res.status(200).send({ message: "Logged in Successfully" });
+          res.status(200).send({ message: "Logged in Successfully",token });
         }
       }
     );
