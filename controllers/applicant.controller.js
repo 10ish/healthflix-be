@@ -90,7 +90,7 @@ exports.login = async (req, res) => {
             path: '/applicants',
             secure:true,
             sameSite: 'none',
-          domain: 'healthflix-be.vercel.app',
+          domain: '.vercel.app',
             maxAge: 1 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
           });
 
