@@ -36,6 +36,15 @@ db.connectDB();
 //initializing database
 init();
 async function init() {
+   try {
+    await Job.deleteMany();
+    await User.deleteMany();
+  
+    console.log("Dropped all entries from Jobs and User model ");
+  } catch (err) {
+     console.log('unable to delete database entries');
+  }
+
   bcrypt.hash(adminConfig.password, authConfig.salt, async (err, hash) => {
     if (err) {
       console.log("Error hashing password for default admin");
@@ -52,13 +61,7 @@ async function init() {
     }
   });
 
-  try {
-    await Job.deleteMany();
-    await User.deleteMany();
-  
-    console.log("Dropped all entries from Jobs and User model ");
-  } catch (err) {}
-
+ 
   try {
     const sampleJobs = await Job.insertMany(sampleJob);
 
