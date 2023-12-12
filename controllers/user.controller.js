@@ -29,9 +29,15 @@ exports.login = async (req, res) => {
               expiresIn: "1d",
             }
           );
-          // res.cookie("adminToken", token);
+      res.cookie("adminToken", token, {
+            httpOnly: true,
+            path: '/',
+            sameSite:'none',
+            secure:true,
+            maxAge: 2 * 24 * 60 * 60 * 1000 // 2 days in milliseconds
+          });
 
-          res.status(200).send({ message: "Logged in Successfully",token });
+          res.status(200).send({ message: "Logged in Successfully"});
         }
       }
     );
